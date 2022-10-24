@@ -21,31 +21,23 @@ NovelAI/
 以下の場合Aキーを押下＝F:\NovelAI\03_Cool\に振り分けとなる
 ```
 a::
-Send, +p
 dir := "F:\NovelAI\03_Cool\"
-Run cmd.exe /c move "%Clipboard%" %dir%,,hide
-Send, {Right}
+Distribute(dir)
 return
 
 s::
-Send, +p
 dir := "F:\NovelAI\04_Cute\"
-Run cmd.exe /c move "%Clipboard%" %dir%,,hide
-Send, {Right}
+Distribute(dir)
 return
 
 d::
-Send, +p
 dir := "F:\NovelAI\05_R-15\"
-Run cmd.exe /c move "%Clipboard%" %dir%,,hide
-Send, {Right}
+Distribute(dir)
 return
 
 f::
-Send, +p
 dir := "F:\NovelAI\06_R-18\"
-Run cmd.exe /c move "%Clipboard%" %dir%,,hide
-Send, {Right}
+Send, +p
 return
 ```
 
