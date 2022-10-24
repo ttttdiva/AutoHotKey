@@ -1,33 +1,34 @@
 global dir
 #IfWinActive,ahk_exe i_view64.exe
 
+Distribute(dir)
+{
+    Send, +p
+    Run cmd.exe /c move "%Clipboard%" %dir%,,hide
+    Send, {Right}
+}
+
 a::
-Send, +p
 dir := "F:\NovelAI\03_Cool\"
-Run cmd.exe /c move "%Clipboard%" %dir%,,hide
-Send, {Right}
+Distribute(dir)
 return
 
 s::
-Send, +p
 dir := "F:\NovelAI\04_Cute\"
-Run cmd.exe /c move "%Clipboard%" %dir%,,hide
-Send, {Right}
+Distribute(dir)
 return
 
 d::
-Send, +p
 dir := "F:\NovelAI\05_R-15\"
-Run cmd.exe /c move "%Clipboard%" %dir%,,hide
-Send, {Right}
+Distribute(dir)
 return
 
 f::
-Send, +p
 dir := "F:\NovelAI\06_R-18\"
-Run cmd.exe /c move "%Clipboard%" %dir%,,hide
-Send, {Right}
+Send, +p
 return
+
+
 
 h::
 Send, {left}
@@ -38,25 +39,24 @@ Send, {Right}
 return
 
 k::
-;Run cmd.exe /c move %dir% "%Clipboard%",,hide
-Send, +p
 dir := "F:\NovelAI\06_R-18\"
-Run cmd.exe /c move "%Clipboard%" %dir%,,hide
-Send, {Right}
+Distribute(dir)
 return
 
 l::
-Send, +p
 dir := "F:\NovelAI\05_R-15\"
-Run cmd.exe /c move "%Clipboard%" %dir%,,hide
-Send, {Right}
+Distribute(dir)
 return
 
 w::
-Send, +p
 dir := "F:\NovelAI\07_other\"
-Run cmd.exe /c move "%Clipboard%" %dir%,,hide
-Send, {Right}
+Distribute(dir)
+return
+
+^z::
+filename := RegExReplace(clipboard,".*\\","")
+o_dir := RegExReplace(clipboard,"(.*\\).*","$1")
+Run cmd.exe /c move "%dir%%filename%" "%o_dir%",,hide
 return
 
 #IfWinActive
