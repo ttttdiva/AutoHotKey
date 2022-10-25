@@ -37,7 +37,7 @@ return
 
 f::
 dir := "F:\NovelAI\06_R-18\"
-Send, +p
+Distribute(dir)
 return
 ```
 
